@@ -9,7 +9,8 @@ public class TimerFun : MonoBehaviour
 
     public bool isCountingUp = true;
 
-    public InstantiationTest instantiateScript;
+    public InstantiationTest instantiateScript; //This is a reference to another script that is doing some instantiations. We will reference this later to call a function of InstantiationTest
+                                                // called CreateJeff().
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,8 @@ public class TimerFun : MonoBehaviour
             timerCountingUp = timerDuration;                      //Reset the timer to the max duration so it can count down and not double dip into THIS if statement
 
             isCountingUp = false; //Change this bool to false so that earlier in Update, it will count down instead of up.
-            instantiateScript.CreateJeff();
+
+            instantiateScript.CreateJeff(); //Call to the instantiateScript and call the CreateJeff() function in it.
         }
 
         if(timerCountingUp <= 0f) //If the timer falls below 0...
@@ -48,6 +50,7 @@ public class TimerFun : MonoBehaviour
             timerCountingUp = 0f; //Reset the timer to 0 so it doesn't double dip into THIS if statement
 
             isCountingUp = true; //Change this bool to true so that earlier in Update, it will count up instead of down.
+
             instantiateScript.CreateJeff();
         }
 

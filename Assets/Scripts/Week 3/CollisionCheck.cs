@@ -23,11 +23,14 @@ public class CollisionCheck : MonoBehaviour
     {
         Debug.Log("Something hit me and it's name is " + otherObject.collider.gameObject.name);
         
-        if (otherObject.collider.gameObject.tag == "JeffTag")
+        if (otherObject.collider.gameObject.tag == "JeffTag") //Here, we check if the other object that hit this object is tagged as "JeffTag". If it is, then we will do some more things.
         {
             Debug.Log("NOOOO! JEFF IS MY DOWNFALL!");
-            Debug.Log("This flip was rated a " + (Random.Range(1, 10) + charismaModifier) + "/10");
-            Destroy(this.gameObject, 2f);
+            Debug.Log("This flip was rated a " + (Random.Range(1, 10) + charismaModifier) + "/10"); //Random.Range here returns an integer from 1 to 10. Then the "charismaModifier" variable
+                                                                                                    //is added to it because we were giving the flip a score from 1-10 and wanted it to be random
+                                                                                                    //for fun :).
+
+            Destroy(this.gameObject, 2f);   //This will destroy the GameObject that is passed into the Destroy() function (in this case it's the gameObject this is attached to), and it will happen after 2 seconds.
         }
     }
 

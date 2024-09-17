@@ -24,6 +24,7 @@ public class UIPractice : MonoBehaviour
         {
             // += means adding to the current value of the thing to the left of it.
             kirbyImage.rectTransform.localScale += Vector3.one * Time.deltaTime; // Multiplying a value by Time.deltaTime is basically saying "per second"
+            
         }
     }
 

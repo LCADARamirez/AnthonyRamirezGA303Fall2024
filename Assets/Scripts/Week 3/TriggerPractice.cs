@@ -18,7 +18,7 @@ public class TriggerPractice : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //Occurs when an object with a rigidbody enters the trigger collider of this object.
     {
         if(other.gameObject.tag == "JeffTag")
         {
@@ -26,7 +26,7 @@ public class TriggerPractice : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) //Occurs when an object with a rigidbody exits the trigger collider of this object.
     {
         if(other.gameObject.tag == "JeffTag")
         {
@@ -35,7 +35,7 @@ public class TriggerPractice : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other) //Occurs every frame an object is within the trigger collider of this object.
     {
         if(other.gameObject.tag == "JeffTag")
         {
