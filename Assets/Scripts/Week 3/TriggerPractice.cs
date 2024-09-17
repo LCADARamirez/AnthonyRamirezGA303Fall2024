@@ -20,9 +20,15 @@ public class TriggerPractice : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //Occurs when an object with a rigidbody enters the trigger collider of this object.
     {
-        if(other.gameObject.tag == "JeffTag")
+        Debug.Log("Something has entered the trigger!");
+
+        if (other.gameObject.tag == "JeffTag")
         {
             Debug.Log("Wow, it's Jeff! He's so strong!");
+        }
+        else if(other.gameObject.tag == "CubeProjectile")
+        {
+            Debug.Log("What is this cube?");
         }
     }
 
@@ -32,6 +38,11 @@ public class TriggerPractice : MonoBehaviour
         {
             music.Play();
             Debug.Log("Noooo don't leave me :(");
+        }
+        if(other.gameObject.tag == "CubeProjectile")
+        {
+            music.Stop();
+            Debug.Log("Stop that music now!");
         }
     }
 

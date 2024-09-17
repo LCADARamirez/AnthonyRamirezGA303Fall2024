@@ -5,10 +5,14 @@ using UnityEngine;
 public class Cannon : MonoBehaviour
 {
     public GameObject cannonBall; //This will be our object we spawn. Select a prefab in the inspector for the object you're trying to spawn.
+    public GameObject otherCannonball;
+    
     public Transform cannonBallSpawnLocation; //This is where our cannonball will spawn. We have an empty object in the scene that is placed exactly where we want it to spawn.
 
     public float cannonBallSpeed = 500f;    //This is used as a multiplier for the force we apply to the Rigidbody when we spawn the cannonball and want it to fire. This needs to be a large number,
                                             //for it to be noticeable.
+
+    //public bool isOtherCannonActive = true; //This bool can control whether or not we do an action when the right mouse is clicked.
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +43,16 @@ public class Cannon : MonoBehaviour
                                                                                         //for the Rigidbody component. Once we have reference to the Rigidbody component, we can call
                                                                                         //that Rigidbody's .AddForce(velocity) function, passing in a Vector3 and multiplying it by a speed
                                                                                         //to launch the spawned object in the direction we tell it to.
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            if(otherCannonball != null) //This checks if the "otherCannonball" variable is null. If it isn't null, it will run the rest of the code. A null object means there is no reference. If something is not null, that means there is proper reference.
+            {
+                GameObject go = Instantiate(otherCannonball, cannonBallSpawnLocation.position, cannonBallSpawnLocation.rotation);
+
+                go.GetComponent<Rigidbody>().AddForce(go.transform.up * cannonBallSpeed);
+            }
         }
     }
 }
