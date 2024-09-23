@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    public void IncreaseScore()
+    public void IncreaseScore() //If any scripts call this function, the private score variable will be increased on this script and the score will be displayed in a Debug.Log().
     {
         
         score++;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
-    public ScoreManager scoreManager;
+    public ScoreManager scoreManager;   //This is our reference to an object in the scene that contains the ScoreManager script. If we call on this reference, we have access to any public variables and functions that the ScoreManager script has.
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
 
     void DestroyEnemy()
     {
-        scoreManager.IncreaseScore();
+        scoreManager.IncreaseScore(); //This calls the IncreaseScore() function on the ScoreManager's script.
 
 
         Destroy(this.gameObject);

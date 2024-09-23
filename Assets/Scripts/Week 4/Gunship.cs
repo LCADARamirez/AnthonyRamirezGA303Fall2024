@@ -5,6 +5,8 @@ using UnityEngine;
 public class Gunship : MonoBehaviour
 {
     public List<NewCannon> cannons = new List<NewCannon>(); //This creates a list of NewCannons that can be referenced by the variable "cannons".
+        // Just like other variables, after "public", the datatype needs to be put here. List<NewCannon> is the datatype. It's basically saying it's a datatype
+        // of a List of the NewCannon scripts. In the inspector, we can plug in as many objects that have a NewCannon script on it, and we can refer to them by index (cannons[0] is the first reference in the list)
 
     public int currentlySelectedCannon = 0; //We will use this to refer to a specific index of the list of cannons later!
 

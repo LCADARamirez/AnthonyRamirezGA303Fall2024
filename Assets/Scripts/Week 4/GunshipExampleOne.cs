@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunshipExampleOne : MonoBehaviour  //This script is a way to do what for loops are doing, except this is really ineffective!
+public class GunshipExampleOne : MonoBehaviour  //This script is a way to do what for loops are doing, except this is really ineffective and is hardcoded how many cannons this ship has! Look at the Gunship.cs script for the PROPER way to do something like this!
 {
     public NewCannon cannonOne;
     public NewCannon cannonTwo;
