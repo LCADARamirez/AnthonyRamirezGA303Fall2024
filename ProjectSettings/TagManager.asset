@@ -8,6 +8,9 @@ TagManager:
   - ScoreManager
   - Enemy
   - CubeProjectile
+  - Cuber
+  - Sphere
+  - Cylinder
   layers:
   - Default
   - TransparentFX
