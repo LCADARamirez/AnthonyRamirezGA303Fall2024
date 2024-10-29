@@ -7,8 +7,9 @@ public class BaseEnemy : MonoBehaviour
     public float health = 100f;
     public float speed = 3f;
     public float attackDamage = 0f;
+    public float attackDistance = 5f;
 
-    private float timer = 0f;
+    [SerializeField] private float timer = 0f;
 
     [SerializeField] protected float attackInterval = 1f;
 
@@ -23,12 +24,16 @@ public class BaseEnemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        timer += Time.deltaTime;
 
-        if(timer >= attackInterval)
+        if(Vector3.Distance(this.transform.position, player.transform.position) < attackDistance)
         {
-            Attack();
-            timer = 0f;
+            timer += Time.deltaTime;
+
+            if (timer >= attackInterval)
+            {
+                Attack();
+                timer = 0f;
+            }
         }
     }
 
@@ -46,9 +51,20 @@ public class BaseEnemy : MonoBehaviour
     {
         health -= damage;
 
+        Debug.Log("Ouch!");
+
         if(health <= 0f)
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    protected virtual void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.tag == "Projectile")
+        {
+            TakeDamage(player.rangedAttackDamage);
+            Destroy(other.gameObject);
         }
     }
 }

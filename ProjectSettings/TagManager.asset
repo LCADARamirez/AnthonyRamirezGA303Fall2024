@@ -12,11 +12,12 @@ TagManager:
   - Sphere
   - Cylinder
   - Door
+  - Projectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - LevelGeo
   - Water
   - UI
   - 
