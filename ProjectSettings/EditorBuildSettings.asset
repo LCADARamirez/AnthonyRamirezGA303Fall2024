@@ -4,5 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Week 13/StartScene.unity
+    guid: e68a8ea8bd6f0a0488e341b942e06aed
+  - enabled: 1
+    path: Assets/Scenes/Week 13/GameScene.unity
+    guid: 70aedadcc07e35946a8d66ba541fa859
+  - enabled: 1
+    path: Assets/Scenes/Week 13/CombatScene.unity
+    guid: 234824bca8a22c946b6fba48af96f7ed
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
